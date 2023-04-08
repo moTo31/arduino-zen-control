@@ -6,7 +6,8 @@
 int iCurrentStep = 1; //holds the current position of the stepper motor (1-4)
 
 void setup() {
-  Serial.begin(9600); //comment if you dont use a potentiometer
+  pinMode(A0, INPUT); //comment out if you dont use a potentiometer
+  Serial.begin(9600); //comment out if you dont use a potentiometer
   // put your setup code here, to run once:
   pinMode(STEPPER_PIN_1, OUTPUT);
   pinMode(STEPPER_PIN_2, OUTPUT);
@@ -21,8 +22,8 @@ void loop() {
   iCurrentStep = (iCurrentStep % 4) + 1; //increase the step, but ensure we dont exceed 4
 
   //note: if you dont use a potentiometer, comment out the following line and set a fixed delay (e.g. 50 ms)
-  int iDelayVal = calculateDelay(analogRead(0)); //based on the potentiometer setting, we wait some time
-  delay(iDelayVal);
+  int iDelayVal = calculateDelay(analogRead(A0)); //comment out if you dont use a potentiometer
+  delay(iDelayVal); //based on the potentiometer setting, we wait some time
   //delay(50); //uncomment if you dont use a potentiometer
 }
 
