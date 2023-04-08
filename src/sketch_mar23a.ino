@@ -1,7 +1,7 @@
-#define STEPPER_PIN_1 9
-#define STEPPER_PIN_2 10
-#define STEPPER_PIN_3 11
-#define STEPPER_PIN_4 12
+#define STEPPER_PIN_1 8
+#define STEPPER_PIN_2 9
+#define STEPPER_PIN_3 10
+#define STEPPER_PIN_4 11
 
 int iCurrentStep = 1; //holds the current position of the stepper motor (1-4)
 
